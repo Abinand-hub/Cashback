@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Cashback</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img/icon.png">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+         <style>
+       
+        
+        .content {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .card-header {
+            background: #f1f5f9;
+            border-bottom: none;
+            padding: 1.5rem;
+            border-radius: 12px 12px 0 0;
+        }
+        .card-header h2 {
+            color: #1d7a38;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .card-body p, .card-body li {
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+        .card-body ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+        .card-body li {
+            margin-bottom: 0.5rem;
+        }
+        .card-body a {
+            color:#1d7a38;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .card-body a:hover {
+            color: #1d7a38;
+            text-decoration: underline;
+        }
+     
+        @media (max-width: 768px) {
+          
+            .card-header h2 {
+                font-size: 1.4rem;
+            }
+            .card-body p, .card-body li {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 0 1rem;
+            }
+        }
+/* General dark mode styles */
+body.dark-mode {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+body.dark-mode .nav-bar,
+body.dark-mode .footer {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-nav .nav-link,
+body.dark-mode .dropdown-item,
+body.dark-mode .footer-item p,
+body.dark-mode .footer-item a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .dropdown-item:hover {
+    color: #28a745;
+}
+
+body.dark-mode .btn-success {
+    background-color: #218838;
+    border-color: #1d7a38;
+}
+
+body.dark-mode .spinner-grow,
+body.dark-mode .back-to-top {
+    background-color: #218838;
+}
+
+/* Navbar dropdown, search button, and Buy Cashback button in dark mode */
+body.dark-mode .dropdown-menu {
+    background-color: #1a1a1a !important;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #2c2c2c !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-search {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-search:hover {
+    background-color: #2c2c2c !important;
+}
+
+body.dark-mode .btn-buy {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-buy:hover {
+    background-color: #000000 !important;
+}
+
+/* Content and card styles in dark mode */
+body.dark-mode .content {
+    background-color: #000000 !important;
+}
+
+body.dark-mode .card {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .card-header {
+    background-color: #2c2c2c !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .card-header h2 {
+    color: #28a745 !important; /* Green headings for h2 */
+}
+
+body.dark-mode .card-body p,
+body.dark-mode .card-body li {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .card-body a {
+    color: #28a745 !important;
+}
+
+body.dark-mode .card-body a:hover {
+    color: #218838 !important;
+}
+
+/* Breadcrumb section in dark mode */
+body.dark-mode .bg-light {
+    background-color: #000000 !important;
+}
+
+body.dark-mode .breadcrumb-item a {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .breadcrumb-item.text-dark {
+    color: #28a745 !important; /* Green for "Privacy Policy" text */
+}
+
+/* Make h1 in breadcrumb section green */
+.container-fluid.bg-light h1 {
+    color: #28a745 !important;
+}
+
+/* Ensure h1 remains green in dark mode */
+body.dark-mode .container-fluid.bg-light h1 {
+    color: #28a745 !important;
+}
+body.dark-mode .navbar-nav .nav-link {
+    color: #ffffff !important; /* Home and other nav links are white */
+}
+body.dark-mode .footer-item h6 a[href="mailto:example@email.io"] {
+    color: #28a745 !important;
+}
+
+body.dark-mode .footer-item h6 a[href="mailto:example@email.io"]:hover {
+    color: #218838 !important;
+}
+
+body.dark-mode .footer-item a:not([href="mailto:example@email.io"]) {
+    color: #28a745 !important;
+}
+
+body.dark-mode .footer-item a:not([href="mailto:example@email.io"]):hover {
+    color: #218838 !important;
+}
+    </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-success" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+         <!-- Navbar Start -->
+    <div class="container-fluid nav-bar">
+        <div class="container">
+     <nav class="navbar navbar-light navbar-expand-lg">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo-c.png" alt="Cashback Logo" />
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-success"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Docs</a>
+                            <div class="dropdown-menu">
+                                <a href="https://cashback-eth-1.gitbook.io/cashback-docs"
+                                    class="dropdown-item">Gitbook</a>
+                                <a href="terms_of_service.html" class="dropdown-item">Terms of Service</a>
+                                <a href="privacy_policy.html" class="dropdown-item">Privacy Policy</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                            <div class="dropdown-menu">
+                                <a href="faqs.html" class="dropdown-item">FAQs</a>
+                                <a href="blog.html" class="dropdown-item">Blog</a>
+                                <a href="glossary.html" class="dropdown-item">Glossary</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <button id="themeToggle" class="btn btn-success btn-sm-square rounded-circle"
+                            title="Toggle Dark/Light Mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="btn btn-buy d-xl-inline-block">Buy Cashback</a>
+                    <div class="footer-icon d-xl-flex ms-3">
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle" href=" https://x.com/Cashbackerc20"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle" href=" https://t.me/cashbackerc"><i
+                                class="fab fa-telegram"></i></a>
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle"
+                            href="https://cashback-eth-1.gitbook.io/cashback-docs" aria-label="GitBook">
+                            <i class="fas fa-book"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+   <div class="container-fluid bg-light py-3 my-6 mt-0">
+            <div class="container text-center animated bounceInDown">
+                <h1 class="display-1 mb-4">Privacy Policy</h1>
+                <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item text-dark" aria-current="page">Privacy Policy</li>
+                </ol>
+            </div>
+        </div>
+
+ 
+
+    <div class="content">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h2>1. Introduction</h2>
+                </div>
+                <div class="card-body">
+                    <p>We at Cashback (“we,” “us,” or “our”) are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and secure information when you access our website, documentation, smart contracts, and related services (collectively, the "Services").</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>2. Information We Collect</h2>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Public Data: Wallet addresses, blockchain transaction data, and token balances.</li>
+                        <li>Account Data: Email address, username (if applicable).</li>
+                        <li>Usage Data: Events related to cashback activities and feature usage.</li>
+                        <li>Technical Data: IP address, browser type, device type, timestamps.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>3. How We Use Your Information</h2>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Operate and maintain the Services.</li>
+                        <li>Provide and track cashback rewards.</li>
+                        <li>Improve security and performance.</li>
+                        <li>Communicate updates and respond to inquiries.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>4. Data Sharing & Disclosure</h2>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>We do not sell your personal information.</li>
+                        <li>We may share aggregated or anonymized data.</li>
+                        <li>We may disclose information if legally required.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>5. Cookies & Tracking</h2>
+                </div>
+                <div class="card-body">
+                    <p>We may use cookies and similar technologies to analyze usage and improve the user experience. You can manage cookie preferences in your browser.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>6. Data Retention</h2>
+                </div>
+                <div class="card-body">
+                    <p>We retain your data only as long as needed for service purposes, legal obligations, and enforcement.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>7. Your Rights</h2>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Request access or deletion of your data.</li>
+                        <li>Withdraw consent at any time.</li>
+                        <li>Lodge a complaint with your local authority.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>8. Security</h2>
+                </div>
+                <div class="card-body">
+                    <p>We apply appropriate security safeguards. However, no system is completely secure. You use our Services at your own risk.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>9. International Transfers</h2>
+                </div>
+                <div class="card-body">
+                    <p>Data may be transferred across borders. By using our Services, you consent to such transfers.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>10. Changes to This Policy</h2>
+                </div>
+                <div class="card-body">
+                    <p>We may update this Privacy Policy. Changes will be posted with an updated effective date.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>11. Contact</h2>
+                </div>
+                <div class="card-body">
+                    <p>Email us at <a href="mailto:Cashbackerc20@gmail.com">Cashbackerc20@gmail.com</a> for privacy-related inquiries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- Footer Start -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-item logo">
+            <img src="img/logo-c.png" alt="Cashback Logo">
+            <p>Cashback is a zero-cost, reward-driven Ethereum infrastructure that lets users earn ETH by simply transacting. With private builder routing, profit sharing, and support for CASH token holders, Cashback transforms everyday wallet activity into passive income—secure, seamless, and community-powered.</p>
+        </div>
+        <div class="footer-item quicklinks">
+ 
+            <h6>Quick links</h6>
+             <a href="index.html">Home</a>
+            <a href="faqs.html">FAQ's</a>
+            <a href="blog.html">Blog</a>
+            <a href="glossary.html">Glossary</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="https://cashback-erc20.gitbook.io/cashback-erc20-docs/">Gitbook</a>
+        </div>
+        <div class="footer-item">
+            <h6>Contact</h6>
+            <a href="mailto:Cashbackerc20@gmail.com">Cashbackerc20@gmail.com</a>
+               <div
+                    class="social-icons-footer d-flex flex-row flex-wrap justify-content-start align-items-center ms-3">
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white me-2"
+                        href="https://x.com/Cashbackerc20" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white me-2"
+                        href="https://t.me/cashbackerc" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white"
+                        href="https://cashback-eth-1.gitbook.io/cashback-docs" aria-label="GitBook">
+                        <i class="fas fa-book"></i>
+                    </a>
+                </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2025 Cashback ERC-20. All Rights Reserved.</p>
+    </div>
+</div>
+<!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-md-square btn-success rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+               <script src="js/main.js"></script>
+            <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    // Apply saved theme on page load
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        toggleButton.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+});
+    </script>
+    </body>
+</html>

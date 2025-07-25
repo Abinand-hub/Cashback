@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Cashback</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img/icon.png">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+         <style>
+        .content {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .accordion .accordion-item {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .accordion .accordion-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .accordion .accordion-header {
+            background: #f1f5f9;
+            border-radius: 12px 12px 0 0;
+        }
+        .accordion .accordion-button {
+            font-size: 1.6rem;
+            font-weight: 00;
+            color: #1d7a38;;
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 12px 12px 0 0;
+        }
+        .accordion .accordion-button:not(.collapsed) {
+            color: #1d7a38;;
+            background: #e2e8f0;
+            box-shadow: none;
+        }
+        .accordion .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+        .accordion .accordion-body {
+            padding: 1.5rem;
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+        .accordion .accordion-body p, .accordion .accordion-body li {
+            margin-bottom: 0.5rem;
+        }
+        .accordion .accordion-body a {
+            color: #1d7a38;;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .accordion .accordion-body a:hover {
+            color: #1d7a38;;
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .accordion .accordion-button {
+                font-size: 1.4rem;
+            }
+            .accordion .accordion-body {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 0 1rem;
+            }
+        }
+        /* General dark mode styles */
+body.dark-mode {
+    background-color: #000000 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Navbar, footer, blog, and breadcrumb */
+body.dark-mode .nav-bar,
+body.dark-mode .footer,
+body.dark-mode .blog,
+body.dark-mode .container-fluid.bg-light {
+    background-color: #000000 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .blog h1 {
+    color: #28a745 !important;
+}
+
+/* Navbar links and dropdowns */
+body.dark-mode .navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .dropdown-item:hover {
+    color: #28a745 !important;
+}
+
+body.dark-mode .dropdown-item {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #1a1a1a !important;
+    border: 1px solid #2c2c2c !important;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #2c2c2c !important;
+    color: #ffffff !important;
+}
+
+/* Buttons */
+body.dark-mode .btn-success,
+body.dark-mode .btn-buy {
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-search {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-search:hover,
+body.dark-mode .btn-buy:hover {
+    background-color: #2c2c2c !important;
+}
+
+body.dark-mode .spinner-grow,
+body.dark-mode .back-to-top {
+    background-color: #218838 !important;
+}
+
+/* Breadcrumb section */
+body.dark-mode .container-fluid.bg-light h1 {
+    color: #28a745 !important;
+}
+
+body.dark-mode .breadcrumb-item a {
+    color: #ffffff !important;
+}
+
+body.dark-mode .breadcrumb-item.text-dark {
+    color: #28a745 !important;
+}
+
+/* Modal search */
+body.dark-mode .modal-content {
+    background-color: #000000 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-body {
+    background-color: #000000 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .modal-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .form-control {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border-color: #2c2c2c !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #888888 !important;
+}
+
+body.dark-mode .input-group-text {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border-color: #2c2c2c !important;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%) !important;
+}
+
+/* Accordion section */
+body.dark-mode .content {
+    background-color: #000000 !important;
+}
+
+body.dark-mode .accordion .accordion-item {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .accordion .accordion-header {
+    background-color: #2c2c2c !important;
+}
+
+body.dark-mode .accordion .accordion-button {
+    color: #28a745 !important;
+    background-color: #2c2c2c !important;
+}
+
+body.dark-mode .accordion .accordion-button:not(.collapsed) {
+    color: #28a745 !important;
+    background-color: #2c2c2c !important;
+}
+
+body.dark-mode .accordion .accordion-body {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .accordion .accordion-body a {
+    color: #28a745 !important;
+}
+
+body.dark-mode .accordion .accordion-body a:hover {
+    color: #218838 !important;
+}
+
+/* Footer */
+body.dark-mode .footer-item p {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .footer-item h6 a[href="mailto:example@email.io"] {
+    color: #28a745 !important;
+}
+
+body.dark-mode .footer-item h6 a[href="mailto:example@email.io"]:hover {
+    color: #218838 !important;
+}
+
+body.dark-mode .footer-item a:not([href="mailto:example@email.io"]) {
+    color: #28a745 !important;
+}
+
+body.dark-mode .footer-item a:not([href="mailto:example@email.io"]):hover {
+    color: #218838 !important;
+}
+
+body.dark-mode .footer-item img[alt="Cashback Logo"] + p {
+    color: #e0e0e0 !important;
+}
+    </style>
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-success" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar">
+            <div class="container">
+           <nav class="navbar navbar-light navbar-expand-lg">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo-c.png" alt="Cashback Logo" />
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-success"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Docs</a>
+                            <div class="dropdown-menu">
+                                <a href="https://cashback-eth-1.gitbook.io/cashback-docs"
+                                    class="dropdown-item">Gitbook</a>
+                                <a href="terms_of_service.html" class="dropdown-item">Terms of Service</a>
+                                <a href="privacy_policy.html" class="dropdown-item">Privacy Policy</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                            <div class="dropdown-menu">
+                                <a href="faqs.html" class="dropdown-item">FAQs</a>
+                                <a href="blog.html" class="dropdown-item">Blog</a>
+                                <a href="glossary.html" class="dropdown-item">Glossary</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <button id="themeToggle" class="btn btn-success btn-sm-square rounded-circle"
+                            title="Toggle Dark/Light Mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="btn btn-buy d-xl-inline-block">Buy Cashback</a>
+                    <div class="footer-icon d-xl-flex ms-3">
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle" href=" https://x.com/Cashbackerc20"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle" href=" https://t.me/cashbackerc"><i
+                                class="fab fa-telegram"></i></a>
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle"
+                            href="https://cashback-eth-1.gitbook.io/cashback-docs" aria-label="GitBook">
+                            <i class="fas fa-book"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <div class="container-fluid bg-light py-3 my-6 mt-0">
+            <div class="container text-center animated bounceInDown">
+                <h1 class="display-1 mb-4">Frequently Asked Questions</h1>
+                <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item text-dark" aria-current="page">FAQ's</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                What is Cashback?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Cashback is a service that allows Ethereum network users to earn rewards by simply transacting as they usually would. By setting up our RPC URL, users’ transactions bypass the usual mempool, offering them a unique and beneficial pathway to transact on the Ethereum network.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                How do I earn rewards with Cashback?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Users earn rewards by transacting through Cashback's RPC URL. The more transactions you process through us, the more rewards in ETH you can earn. Additionally, holding CASH tokens and referring others to our platform can boost your rewards.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                What are CASH tokens and how do they work?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>CASH tokens are Cashback's native tokens. Users can acquire and hold these tokens in their wallet to earn additional transaction rewards. The system is designed such that the more CASH tokens you hold, the greater the number of bonus transactions you accumulate. This approach promotes both the acquisition and holding of CASH tokens, integrating them into the broader Cashback ecosystem.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                How are transactions processed without the mempool?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Cashback sends transactions directly to the builder, bypassing the standard mempool. This not only speeds up the transaction process but also offers enhanced security against malicious MEV strategies like sandwich attacks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                Do I have to pay to use Cashback services?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>No! Using Cashback is entirely free. Users just need to set up our RPC URL with a single click and then continue transacting as usual.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                How does the referral system work?
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Every user gets a unique Referral ID once they transact via Cashback. By sharing this ID and getting others to sign up and transact, both the referrer and the referred earn additional transactions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                What is the vesting period for the team's CASH tokens?
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The Cashback team has a vesting period of 3 months for their allocated CASH tokens. This ensures the team's dedication to the project's long-term success.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                How is the total supply of CASH tokens distributed?
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The total supply of CASH tokens is 1,000,000. 80% of this is allocated to the Liquidity Pool, and 20% is reserved for the team, with a vesting period of 3 months.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                How can I get more information or support?
+                            </button>
+                        </h2>
+                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>For additional questions or support, you can always reach out to our dedicated team on <a href="https://t.me/cashbackerc">Telegram</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+       <div class="footer">
+    <div class="footer-content">
+        <div class="footer-item logo">
+            <img src="img/logo-c.png" alt="Cashback Logo">
+            <p>Cashback is a zero-cost, reward-driven Ethereum infrastructure that lets users earn ETH by simply transacting. With private builder routing, profit sharing, and support for CASH token holders, Cashback transforms everyday wallet activity into passive income—secure, seamless, and community-powered.</p>
+        </div>
+        <div class="footer-item quicklinks">
+ 
+            <h6>Quick links</h6>
+             <a href="index.html">Home</a>
+            <a href="faqs.html">FAQ's</a>
+            <a href="blog.html">Blog</a>
+            <a href="glossary.html">Glossary</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="https://cashback-erc20.gitbook.io/cashback-erc20-docs/">Gitbook</a>
+        </div>
+        <div class="footer-item">
+            <h6>Contact</h6>
+            <a href="mailto:Cashbackerc20@gmail.com">Cashbackerc20@gmail.com</a>
+               <div
+                    class="social-icons-footer d-flex flex-row flex-wrap justify-content-start align-items-center ms-3">
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white me-2"
+                        href="https://x.com/Cashbackerc20" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white me-2"
+                        href="https://t.me/cashbackerc" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white"
+                        href="https://cashback-eth-1.gitbook.io/cashback-docs" aria-label="GitBook">
+                        <i class="fas fa-book"></i>
+                    </a>
+                </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2025 Cashback ERC-20. All Rights Reserved.</p>
+    </div>
+</div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-md-square btn-success rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+                     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    // Apply saved theme on page load
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // Toggle theme on button click
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        toggleButton.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+});
+    </script>
+    </body>
+</html>

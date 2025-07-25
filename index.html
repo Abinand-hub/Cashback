@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cashback</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/icon.png">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .fact-section {
+            width: 90%;
+            height: 70vh;
+            margin: 5vh auto;
+            background: #ffffff;
+            border-radius: 20px;
+            border:1px solid #28a739 !important;
+            display: flex;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .counter-panel {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container1 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .metrics-row {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .metric h3 {
+            margin: 0;
+            font-size: 4em;
+        }
+
+        .metric p {
+            margin: 5px 0 0;
+            font-size: 1em;
+        }
+
+        .container1 .box {
+            position: relative;
+            left: -100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% + 400px);
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #000);
+            animation: animatesurface 1.5s ease-in-out infinite;
+        }
+
+        @keyframes animatesurface {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-200px);
+            }
+        }
+
+        .container1 .box .cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #02c85a;
+            box-shadow:
+                0 0 5px rgb(2, 200, 130),
+                0 0 25px rgb(2, 200, 100),
+                0 0 50px rgb(2, 200, 120),
+                0 0 150px rgb(2, 200, 90);
+            transform-origin: bottom right;
+            animation: animate 1.5s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            60%, 70%, 80%, 100% {
+                transform: rotate(90deg);
+            }
+
+            65% {
+                transform: rotate(85deg);
+            }
+
+            75% {
+                transform: rotate(87.5deg);
+            }
+        }
+
+        body.dark-mode .fact-section {
+            background-color: rgb(0, 0, 0);
+        }
+
+        body.dark-mode .counter-panel {
+            background-color: #000000;
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 767px) {
+            .container1 {
+                display: none;
+            }
+
+            .counter-panel {
+                flex: 0 0 100%;
+                max-width: 100%;
+                border-right: none;
+            }
+        }
+
+        body.dark-mode .footer-item h6 a[href="mailto:example@email.io"] {
+            color: #28a745 !important;
+        }
+
+        body.dark-mode .footer-item h6 a[href="mailto:example@email.io"]:hover {
+            color: #218838 !important;
+        }
+
+        body.dark-mode .footer-item a:not([href="mailto:example@email.io"]) {
+            color: #28a745 !important;
+        }
+
+        body.dark-mode .footer-item a:not([href="mailto:example@email.io"]):hover {
+            color: #218838 !important;
+        }
+
+        /* --- Card Animation Section Styles --- */
+        .card-section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e3f5f1;
+            perspective: 1000px;
+            overflow: hidden;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .card-container {
+            width: 80%;
+            max-width: 900px;
+            min-height: 400px;
+            /* Changed from height to min-height */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+
+        @media (min-width: 992px) {
+            .card-container {
+                min-height: 350px;
+                /* Changed from height to min-height */
+            }
+        }
+
+        .card-item {
+            width: 100%;
+            min-width: 300px;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            border: 2px solid rgb(2, 200, 100);
+            box-shadow: 0 10px 20px rgba(173, 55, 55, 0.2);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+            position: absolute;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0s;
+            transform-origin: center center;
+            box-sizing: border-box;
+            /* Added to handle padding correctly */
+        }
+     
+
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .card-item h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.7em;
+              color:#2aaa48;
+        }
+
+        .card-item p {
+            margin: 0;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .card-item img {
+            max-width: 300px;
+            /* Changed to max-width for flexibility */
+            height: auto;
+            object-fit: contain;
+            background: transparent;
+        }
+
+        .card-item.active {
+            transform: translateX(0) scale(1);
+            z-index: 10;
+            opacity: 1;
+        }
+
+        .card-item.next {
+            transform: translateX(120%) scale(0.95);
+            z-index: 5;
+            opacity: 0.7;
+        }
+
+        .card-item.previous {
+            transform: translateX(-120%) scale(0.95);
+            z-index: 5;
+            opacity: 0.7;
+        }
+
+        .card-item.inactive-right {
+            transform: translateX(200%) scale(0.8);
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .card-item.inactive-left {
+            transform: translateX(-200%) scale(0.8);
+            z-index: 1;
+            opacity: 0;
+        }
+
+        body.dark-mode .card-section {
+            background-color: #000000;
+        }
+
+        body.dark-mode .card-item {
+            background-color: #000000;
+            border: 1px solid #01eb2c;
+            color: #ffffff;
+        }
+
+       body.dark-mode .card-item h2{
+           
+            color: #2aaa48;
+        }
+
+        @media (max-width: 991px) {
+            .card-item {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .card-content {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .card-item img {
+                max-width: 120px;
+                /* Changed to max-width */
+                margin-bottom: 10px;
+            }
+
+            .card-container {
+                min-height: 450px;
+                /* Changed from height to min。首先
+
+    @media (max-width: 600px) {
+        .card-item {
+            padding: 15px; /* Reduced padding for smaller screens */
+            }
+
+            .card-item img {
+                max-width: 200px;
+                /* Smaller images for very small screens */
+            }
+
+            .card-container {
+                width: 90%;
+                /* Wider container for small screens */
+            }
+        }
+
+
+  .card-nav {
+    display: flex; /* Show buttons by default on all screens */
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center; /* Center buttons for better alignment */
+    z-index: 1;
+}
+
+.card-nav button {
+    padding: 10px 20px; /* Slightly smaller padding for mobile */
+    font-size: 1em; /* Adjust font size for better fit */
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card-nav button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-nav button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-nav button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 767px) {
+    .card-nav {
+        gap: 10px; /* Reduce gap for mobile */
+        margin-top: 10px; /* Reduce margin */
+    }
+    .card-nav button {
+        padding: 8px 15px; /* Smaller buttons for mobile */
+        font-size: 0.9em; /* Smaller font size */
+        display: none;
+    }
+}
+
+        /* Improved alignment for the h6 section on mobile devices */
+        .wallet-support-section h6 {
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+            padding: 0 15px;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+
+        @media (max-width: 767px) {
+            .wallet-support-section h6 {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                padding: 0 10px;
+                max-width: 95%;
+            }
+        }
+        .seperate{
+            color:#358649 !important;
+        }
+        .metrics-row p{
+            color:#2e743f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner"
+        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-success" role="status"></div>
+    </div>
+    <div class="container-fluid nav-bar">
+        <div class="container">
+            <nav class="navbar navbar-light navbar-expand-lg">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo-c.png" alt="Cashback Logo" />
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-success"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Docs</a>
+                            <div class="dropdown-menu">
+                                <a href="https://cashback-eth-1.gitbook.io/cashback-docs"
+                                    class="dropdown-item">Gitbook</a>
+                                <a href="terms_of_service.html" class="dropdown-item">Terms of Service</a>
+                                <a href="privacy_policy.html" class="dropdown-item">Privacy Policy</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                            <div class="dropdown-menu">
+                                <a href="faqs.html" class="dropdown-item">FAQs</a>
+                                <a href="blog.html" class="dropdown-item">Blog</a>
+                                <a href="glossary.html" class="dropdown-item">Glossary</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        <button id="themeToggle" class="btn btn-success btn-sm-square rounded-circle"
+                            title="Toggle Dark/Light Mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="btn btn-buy d-xl-inline-block">Buy Cashback</a>
+                    <div class="footer-icon d-xl-flex ms-3">
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle" href=" https://x.com/Cashbackerc20"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle" href=" https://t.me/cashbackerc"><i
+                                class="fab fa-telegram"></i></a>
+                        <a class="btn btn-success btn-sm-square me-2 rounded-circle"
+                            href="https://cashback-eth-1.gitbook.io/cashback-docs" aria-label="GitBook">
+                            <i class="fas fa-book"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid hero-section">
+        
+        <canvas id="particleCanvas"></canvas>
+        <div class="container">
+            
+            <div class="row g-5 align-items-center">
+                
+                <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <small
+                            class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-success rounded-pill px-4 py-1 mb-4 animated bounceInDown">
+                            Welcome to Cashback
+                        </small>
+                        <h1 class="display-1 aj mb-4 fw-bold animated bounceInDown">
+        Revolutionizing Ethereum Transactions
+    </h1>
+                        <p class="fw-bold animated bounceInDown">
+                            Unlock daily transaction credits and maximize <br>
+                            your earning potential simply by holding our <br>
+                            native token, CASH.
+                        </p>
+                        <a href="#"
+                            class="btn btn-success border-0 rounded-pill py-3 px-4 px-md-5 me-2 animated bounceInLeft">
+                            Buy Cashback
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12"></div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- animate start -->
+
+    <div class="card-section">
+        <div class="card-container">
+            <div class="card-item active" data-index="0">
+                <div class="card-content">
+                    <h2>Seamless Integration</h2>
+                    <p>Integrate Cashback’s RPC URL into your Ethereum wallet with one click, unlocking an enhanced and
+                        simplified transaction experience.</p>
+                </div>
+                <img src="1.gif" alt="Seamless Integration">
+            </div>
+            <div class="card-item next" data-index="1">
+                <div class="card-content">
+                    <h2>Direct Builder Payments</h2>
+                    <p>Bypass the public Mempool and send transactions directly to builders for faster execution and
+                        added privacy.</p>
+                </div>
+                <img src="2.gif" alt="Direct Builder Payments">
+            </div>
+            <div class="card-item next" data-index="2">
+                <div class="card-content">
+                    <h2>Profit Sharing</h2>
+                    <p>Earn a share of monthly builder profits based on your activity, creating a win-win for both users
+                        and builders.</p>
+                </div>
+                <img src="3.gif" alt="Profit Sharing">
+            </div>
+            <div class="card-item next" data-index="3">
+                <div class="card-content">
+                    <h2>Cashback Token (Cash)</h2>
+                    <p>Boost your daily rewards and earn transaction credits simply by holding $CASH tokens in your
+                        wallet.</p>
+                </div>
+                <img src="4.gif" alt="Cashback Token">
+            </div>
+            <div class="card-item next" data-index="4">
+                <div class="card-content">
+                    <h2>MEV Shielding</h2>
+                    <p>Protect your transactions from front-running and sandwich attacks by avoiding the vulnerable
+                        public mem pool.</p>
+                </div>
+                <img src="5.gif" alt="MEV Shielding">
+            </div>
+        </div>
+        <div class="card-nav">
+            <button id="prevCardBtn">←</button>
+            <button id="nextCardBtn">→</button>
+        </div>
+    </div>
+    <!-- animate end -->
+
+    <section class="fact-section">
+        <div class="counter-panel">
+            <div id="particles-js"></div>
+            <h3 class="seperate">Cashback sets the standard for seamless, reward-driven Ethereum transactions.</h3>
+            <div class="metrics-row">  
+                 <div class="metric">
+                    <h3>0</h3>
+                    <p>Transactions Made</p>
+                </div>  <div class="metric">
+                    <h3>0</h3>
+                    <p>Users Onboarded</p>
+                </div>
+             
+               
+            
+            </div>
+            <div class="metrics-row">  
+                  <div class="metric">
+                    <h3>0</h3>
+                    <p>Cashback Given</p>
+                </div>
+                     <div class="metric">
+                    <h3>0</h3>
+                    <p>Volume Generated</p>
+                </div>
+               
+           
+            </div>
+        </div>
+        <div class="container1">
+            <div class="box">
+                <div class="cube"></div>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid offer-section pb-5">
+        <div class="container pb-5">
+            <div class="row g-5 align-items-stretch">
+                <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="nav nav-pills bg-light rounded p-4 flex-column h-100">
+                        <a class="accordion-link p-3 mb-2 active d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab1">
+                            <h6 class="mb-0 d-flex justify-content-center">Seamless Integration</h6>
+                        </a>
+                        <a class="accordion-link p-3 mb-2 d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab2">
+                            <h6 class="mb-0">Direct Transactions to Builders</h6>
+                        </a>
+                        <a class="accordion-link p-3 mb-2 d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab3">
+                            <h6 class="mb-0">Profit Sharing Mechanism</h6>
+                        </a>
+                        <a class="accordion-link p-3 mb-2 d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab4">
+                            <h6 class="mb-0">Cashback Token (CASH)</h6>
+                        </a>
+                        <a class="accordion-link p-3 mb-2 d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab5">
+                            <h6 class="mb-0">Shielded From Harmful MEV</h6>
+                        </a>
+                        <a class="accordion-link p-3 mb-2 d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab6">
+                            <h6 class="mb-0">Innovative Security Measures</h6>
+                        </a>
+                        <a class="accordion-link p-3 mb-2 d-flex justify-content-center" data-bs-toggle="pill"
+                            href="#tab7">
+                            <h6 class="mb-0">Community Engagement</h6>
+                        </a>
+                        <a class="accordion-link p-3 d-flex justify-content-center" data-bs-toggle="pill" href="#tab8">
+                            <h6 class="mb-0">Flexible Reward Tiers</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="tab-content bg-white rounded p-4 shadow-sm h-100 position-relative d-flex align-items-center justify-content-center green-border-box">
+
+                        <div class="tab-pane fade show active" id="tab1">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Seamless Integration</h1>
+                                <p class="mb-0">Integrate Cashback’s RPC URL into your Ethereum wallet with one click, unlocking an enhanced and simplified transaction experience.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Direct Transactions to Builders</h1>
+                                <p class="mb-0">Bypass the public mem pool and send transactions directly to builders for faster execution and added privacy.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab3">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Profit Sharing Mechanism</h1>
+                                <p class="mb-0">Earn a share of monthly builder profits based on your activity, creating a win-win for both users and builders.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab4">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Cashback Token (CASH)</h1>
+                                <p class="mb-0">Boost your daily rewards and earn transaction credits simply by holding $CASH tokens in your wallet.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab5">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Shielded From Harmful MEV</h1>
+                                <p class="mb-0">Protect your transactions from front-running and sandwich attacks by avoiding the vulnerable public mem pool.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab6">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Innovative Security Measures</h1>
+                                <p class="mb-0">Protect transactions from MEV threats using private builder routing.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab7">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Community Engagement</h1>
+                                <p class="mb-0">Engage, get updates, and receive support from our thriving community on Telegram & Discord.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab8">
+                            <div class="text-center">
+                                <h1 class="display-6 mb-3 text-success">Flexible Reward Tiers</h1>
+                                <p class="mb-0">Hold more tokens, earn greater rewards — our fair and scalable tier model ensures everyone benefits proportionally.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-2 wallet-support-section">
+        <div class="container">
+            <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+                <small
+                    class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-success rounded-pill px-4 py-1 mb-3">Supports
+                    All EVM Wallets</small>
+                <h6>Cashback is built to work seamlessly with all major and niche EVM-compatible wallets, <br>ensuring
+                    broad accessibility and a smooth user experience across the ecosystem.</h6>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel carousel-left-to-right">
+                    <img src="img\coinbase-logo.svg" alt="Coinbase">
+                    <img src="img\crypto.com-logo.svg" alt="Crypto.com">
+                    <img src="img\ledger-logo.svg" alt="Ledger">
+                    <img src="img\metamask-logo.svg" alt="MetaMask">
+                    <img src="img\okx-logo.svg" alt="OKX">
+                    <img src="img\trust-wallet-logo.svg" alt="Trust Wallet">
+                    <img src="img\coinbase-logo.svg" alt="Coinbase">
+                    <img src="img\crypto.com-logo.svg" alt="Crypto.com">
+                    <img src="img\ledger-logo.svg" alt="Ledger">
+                    <img src="img\metamask-logo.svg" alt="MetaMask">
+                    <img src="img\okx-logo.svg" alt="OKX">
+                    <img src="img\trust-wallet-logo.svg" alt="Trust Wallet">
+                </div>
+            </div>
+            <!-- <div class="carousel-container">
+                <div class="carousel carousel-right-to-left">
+                    <img src="img\coinbase-logo.svg" alt="Coinbase">
+                    <img src="img\crypto.com-logo.svg" alt="Crypto.com">
+                    <img src="img\ledger-logo.svg" alt="Ledger">
+                    <img src="img\metamask-logo.svg" alt="MetaMask">
+                    <img src="img\okx-logo.svg" alt="OKX">
+                    <img src="img\trust-wallet-logo.svg" alt="Trust Wallet">
+                    <img src="img\coinbase-logo.svg" alt="Coinbase">
+                    <img src="img\crypto.com-logo.svg" alt="Crypto.com">
+                    <img src="img\ledger-logo.svg" alt="Ledger">
+                    <img src="img\metamask-logo.svg" alt="MetaMask">
+                    <img src="img\okx-logo.svg" alt="OKX">
+                    <img src="img\trust-wallet-logo.svg" alt="Trust Wallet">
+                </div>
+            </div> -->
+        </div>
+    </div>
+<!-- Footer Start -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-item logo">
+            <img src="img/logo-c.png" alt="Cashback Logo">
+            <p>Cashback is a zero-cost, reward-driven Ethereum infrastructure that lets users earn ETH by simply transacting. With private builder routing, profit sharing, and support for CASH token holders, Cashback transforms everyday wallet activity into passive income—secure, seamless, and community-powered.</p>
+        </div>
+        <div class="footer-item quicklinks">
+ 
+            <h6>Quick links</h6>
+             <a href="index.html">Home</a>
+            <a href="faqs.html">FAQ's</a>
+            <a href="blog.html">Blog</a>
+            <a href="glossary.html">Glossary</a>
+            <a href="terms_of_service.html">Terms of Service</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="https://cashback-erc20.gitbook.io/cashback-erc20-docs/">Gitbook</a>
+        </div>
+        <div class="footer-item">
+            <h6>Contact</h6>
+            <a href="mailto:Cashbackerc20@gmail.com">Cashbackerc20@gmail.com</a>
+               <div
+                    class="social-icons-footer d-flex flex-row flex-wrap justify-content-start align-items-center ms-3">
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white me-2"
+                        href="https://x.com/Cashbackerc20" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white me-2"
+                        href="https://t.me/cashbackerc" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a class="btn btn-success btn-sm-square rounded-circle text-white"
+                        href="https://cashback-eth-1.gitbook.io/cashback-docs" aria-label="GitBook">
+                        <i class="fas fa-book"></i>
+                    </a>
+                </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2025 Cashback ERC-20. All Rights Reserved.</p>
+    </div>
+</div>
+<!-- Footer End -->
+    <a href="#" class="btn btn-md-square btn-success rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('themeToggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            toggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                toggleButton.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            });
+        });
+    </script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 90, density: { enable: true, value_area: 800 } },
+                color: { value: "#39ff14" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
+                opacity: { value: 0.8, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 120, color: "#39ff14", opacity: 0.6, width: 1.5 },
+                move: { enable: true, speed: 2, direction: "none", straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: { detect_on: "canvas", events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+            retina_detect: true
+        });
+    </script>
+    <script>
+ document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.card-item');
+    const cardSection = document.querySelector('.card-section');
+    const prevCardBtn = document.getElementById('prevCardBtn');
+    const nextCardBtn = document.getElementById('nextCardBtn');
+
+    // Debug: Verify elements exist
+    if (!items.length || !cardSection || !prevCardBtn || !nextCardBtn) {
+        console.error('Required elements missing for card navigation');
+        return;
+    }
+
+    let currentIndex = 0;
+    let isAnimating = false;
+    let isSectionInView = false;
+    let scrollAccumulator = 0;
+    const scrollThreshold = 70;
+    let autoPlayInterval;
+
+    function updateItemClasses(direction = 'next') {
+        const totalItems = items.length;
+        items.forEach((item, index) => {
+            item.classList.remove('active', 'next', 'previous', 'inactive-left', 'inactive-right');
+
+            const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+            const nextIndex = (currentIndex + 1) % totalItems;
+
+            if (index === currentIndex) {
+                item.classList.add('active');
+            } else if (index === nextIndex) {
+                item.classList.add('next');
+            } else if (index === prevIndex) {
+                item.classList.add('previous');
+            } else if (
+                (index > currentIndex && index !== nextIndex) ||
+                (currentIndex === totalItems - 1 && index === 0)
+            ) {
+                item.classList.add(direction === 'next' ? 'inactive-right' : 'inactive-left');
+            } else if (
+                (index < currentIndex && index !== prevIndex) ||
+                (currentIndex === 0 && index === totalItems - 1)
+            ) {
+                item.classList.add(direction === 'next' ? 'inactive-left' : 'inactive-right');
+            }
+        });
+    }
+
+    function updateButtonStates() {
+        prevCardBtn.disabled = isAnimating;
+        nextCardBtn.disabled = isAnimating;
+        // Debug: Log button states
+        console.log('Button states updated: prev=', prevCardBtn.disabled, 'next=', nextCardBtn.disabled);
+    }
+
+    function navigateToItem(targetIndex, direction) {
+        if (isAnimating || !isSectionInView) {
+            console.log('Navigation blocked: isAnimating=', isAnimating, 'isSectionInView=', isSectionInView);
+            return;
+        }
+
+        isAnimating = true;
+        updateButtonStates();
+
+        const totalItems = items.length;
+        let newIndex = targetIndex;
+
+        if (newIndex < 0) {
+            newIndex = totalItems - 1;
+        } else if (newIndex >= totalItems) {
+            newIndex = 0;
+        }
+
+        if (newIndex === currentIndex) {
+            isAnimating = false;
+            updateButtonStates();
+            return;
+        }
+
+        currentIndex = newIndex;
+        updateItemClasses(direction);
+
+        setTimeout(() => {
+            isAnimating = false;
+            updateButtonStates();
+            console.log('Animation complete, isAnimating reset to false');
+        }, 600); // Match CSS transition duration
+    }
+
+    function startAutoPlay(delay = 1500) {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(() => {
+            navigateToItem(currentIndex + 1, 'next');
+        }, delay);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    // Initial setup
+    updateItemClasses();
+    updateButtonStates();
+    startAutoPlay();
+
+    // Intersection Observer to control autoplay
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                isSectionInView = entry.isIntersecting;
+                if (!isSectionInView) {
+                    stopAutoPlay();
+                } else {
+                    startAutoPlay();
+                }
+                console.log('Section in view:', isSectionInView);
+            });
+        },
+        { threshold: 0.5 }
+    );
+    observer.observe(cardSection);
+
+    // Wheel event for navigation
+    window.addEventListener('wheel', (e) => {
+        if (!isSectionInView) return;
+        stopAutoPlay();
+        scrollAccumulator += e.deltaY;
+
+        if (scrollAccumulator > scrollThreshold) {
+            e.preventDefault();
+            navigateToItem(currentIndex + 1, 'next');
+            scrollAccumulator = 0;
+        } else if (scrollAccumulator < -scrollThreshold) {
+            e.preventDefault();
+            navigateToItem(currentIndex - 1, 'prev');
+            scrollAccumulator = 0;
+        } else {
+            scrollAccumulator *= 0.8;
+        }
+        startAutoPlay(3000);
+    }, { passive: false });
+
+    // Button click events
+    prevCardBtn.addEventListener('click', () => {
+        console.log('Prev button clicked');
+        stopAutoPlay();
+        navigateToItem(currentIndex - 1, 'prev');
+        startAutoPlay(3000);
+    });
+
+    nextCardBtn.addEventListener('click', () => {
+        console.log('Next button clicked');
+        stopAutoPlay();
+        navigateToItem(currentIndex + 1, 'next');
+        startAutoPlay(3000);
+    });
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+        if (!isSectionInView) return;
+        stopAutoPlay();
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            navigateToItem(currentIndex + 1, 'next');
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            navigateToItem(currentIndex - 1, 'prev');
+        }
+        startAutoPlay(3000);
+    });
+});
+    </script>
+</body>
+</html>

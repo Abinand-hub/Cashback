@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Atom Particles on Mobile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .fact-section {
+      width: 90%;
+      height: 60vh;
+      margin: 5vh auto;
+      background: #ffffff;
+      border-radius: 20px;
+      display: flex;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .counter-panel {
+      flex: 1;
+      background-color: #4caf50;
+      border-right: 2px solid #388e3c;
+      padding: 30px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Particle background container */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+
+    /* Ensure text is above particle layer */
+    .counter-panel > *:not(#particles-js) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .metrics-row {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .metric h3 {
+      margin: 0;
+      font-size: 2em;
+      font-weight: 700;
+      font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+    }
+
+    .metric p {
+      margin: 5px 0 0;
+      font-size: 1em;
+      font-weight: 600;
+      font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+    }
+
+    .container1 {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Mobile view: Tablets and smaller */
+    @media (max-width: 768px) {
+      .fact-section {
+        width: fit-content;
+        max-width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+      }
+
+      .counter-panel {
+        width: fit-content;
+        max-width: 80%;
+        padding: 8px;
+        height: 70%;
+        margin: 0 auto;
+      }
+
+      .fact-section .counter-panel .metrics-row .metric h3 {
+        font-size: 1.25rem;
+      }
+
+      .fact-section .counter-panel .metrics-row .metric p {
+        font-size: 0.875rem;
+      }
+
+      .metrics-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .metric {
+        flex: 0 0 48%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 8px;
+        min-width: 90px;
+        max-width: 45%;
+      }
+    }
+
+    /* Smaller mobile devices */
+    @media (max-width: 576px) {
+      .fact-section {
+        width: fit-content;
+        max-width: 95%;
+        padding: 8px;
+        margin: 0 auto;
+      }
+
+      .counter-panel {
+        width: fit-content;
+        max-width: 85%;
+        padding: 6px;
+        margin: 0 auto;
+      }
+
+      .fact-section .counter-panel .metrics-row .metric h3 {
+        font-size: 1rem;
+      }
+
+      .fact-section .counter-panel .metrics-row .metric p {
+        font-size: 0.75rem;
+      }
+
+      .metrics-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        width: 100%;
+      }
+
+      .metric {
+        flex: 0 0 48%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 6px;
+        min-width: 80px;
+        max-width: 45%;
+      }
+    }
+
+    /* Hide particles on desktop */
+    @media (min-width: 577px) {
+      #particles-js {
+        display: none;
+      }
+    }
+
+    /* Prevent font scaling */
+    .metric h3,
+    .metric p {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+  </style>
+</head>
+<body>
+  <section class="fact-section">
+    <div class="counter-panel">
+      <div id="particles-js"></div>
+
+      <div class="metrics-row">
+        <div class="metric">
+          <h3>50M</h3>
+          <p>UserOps</p>
+        </div>
+        <div class="metric">
+          <h3>1.2M</h3>
+          <p>Smart Accounts</p>
+        </div>
+      </div>
+      <div class="metrics-row">
+        <div class="metric">
+          <h3>2+</h3>
+          <p>Users Onboarded</p>
+        </div>
+        <div class="metric">
+          <h3>12+</h3>
+          <p>Volume</p>
+        </div>
+      </div>
+    </div>
+    <div class="container1">
+      <div class="box">
+        <div class="cube"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Load particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Initialize Particles -->
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 40,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#ffffff"
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000"
+          }
+        },
+        opacity: {
+          value: 0.5,
+          random: true
+        },
+        size: {
+          value: 4,
+          random: true
+        },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: false
+          },
+          onclick: {
+            enable: false
+          },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
